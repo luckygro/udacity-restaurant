@@ -2,7 +2,7 @@
 // ** map
 // ****** 
 #OverviewMap > div {
-	height: 500px;
+	height: 300px;
 }
 
 // ******
@@ -18,12 +18,18 @@
 		width: 100%;
 	}
 
+	h2 {
+		color: #553;
+	}
+	h3 {
+		color: #997;
+	}
+
 	.rest-about {
 
 		span {
 			display: block;
 			margin: 10px 0;
-			margin-left: 20px;
 		}
 
 		.rest-ab-address:before {
@@ -39,7 +45,6 @@
 	.rest-openinghours {
 		.rest-op-day {
 			margin-right: 0.5em;
-			margin-left: 20px;
 		}
 		span {
 			margin-top: 10px;
@@ -52,7 +57,7 @@
 		> span {
 			display: block;
 			margin: 10px 0;
-			margin-left: 20px;
+			margin-right: 0.5em;
 			float: left;
 			color: #666;
 		}
@@ -70,7 +75,6 @@
 			float: left;
 			display: block;
 			width: 100%;
-			margin-left: 20px;
 			margin-top: 0px;
 		}
 
@@ -79,8 +83,51 @@
 
 		}
 
+	    margin-bottom: 20px;
+	    margin-top: 20px;
+	    overflow-y: hidden;
 	}
 
 
 }
 
+
+@media screen and (min-width: 498px) {
+	body {
+		position: absolute;
+		height: 100%;
+	    width: 100%;
+	}
+	#root {
+		height: 100%;
+	}
+	#RestaurantPage {
+
+		height: 100%;
+		overflow: hidden;
+		display: grid;
+		grid-gap: 0px;
+		grid-template-columns: 3fr 2fr;
+		margin-right: 0;
+
+		header {
+			grid-column: span 2;
+		}
+
+		.leaflet-container {
+			height: 100%;
+		}
+
+		#RestDescription {
+			overflow-y: scroll;
+			margin: 0;
+			box-shadow: 0px 0px 10px 5px #999;
+			z-index: 2999;
+		    padding: 5%;
+		    width: 90%;
+
+
+		}
+
+	}
+}

@@ -1,13 +1,12 @@
 import React from 'react'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
-
-
+import { Link } from 'react-router-dom';
 
 const RestaurantMarker = ({item}) => {
 
 	return (
 		<Marker position={[item.latlng.lat, item.latlng.lng]}>
-	      	<Popup>{item.name}</Popup>
+	      	<Popup><Link to={`/${item.id}`}>{item.name}</Link></Popup>
 	    </Marker>
 	)
 }
@@ -15,23 +14,13 @@ const RestaurantMarker = ({item}) => {
 
 const OverviewMap = ({restaurants}) => {
 
-	let defaultPosition = [];
-
-	const checkDefaultPosition = () => {
-
-		if (restaurants.len > 1) {
-			defaultPosition =  [40.722216, -73.987501];
-		} else {
-			defaultPosition = [restaurants[0].latlng.lat, restaurants[0].latlng.lng];
-		}
-	}
-
-	checkDefaultPosition();
-
+	let defaultPosition = [40.722216, -73.987501];
 
 	return (
-		<section id="OverviewMap">
-			<Map center={defaultPosition} zoom={13} scrollWheelZoom={false}>
+
+		// hide map from screen reader - redundant information, use restaurant overview instead
+		<section id="OverviewMap" aria-hidden="true" tabIndex={-1}>
+			<Map center={defaultPosition} zoom={12} scrollWheelZoom={false}>
 				<TileLayer
 				  url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}"
 				  mapboxToken="pk.eyJ1IjoibHVja3lncm8iLCJhIjoiY2p6bXUwYzZuMGM0dTNjbngzN2wzZ2lmcSJ9.TXA1Ha-Cpot9JKZgmTp_bg"
@@ -40,10 +29,14 @@ const OverviewMap = ({restaurants}) => {
 				  id="mapbox.streets"
 				/>
 
-				{restaurants.map(restaurant => (
-						<RestaurantMarker key={restaurant.id} item={restaurant} />
+				{(restaurants.length > 0) ? (
+					restaurants.map(restaurant => (
+							<RestaurantMarker key={restaurant.id} item={restaurant} />
+						)
 					)
-				)}
+				) : null}
+
+				
 
 			</Map>
 	 	</section>

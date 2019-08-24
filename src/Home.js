@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Header from './components/header';
 import OverviewMap from './components/map';
@@ -102,7 +101,7 @@ class Home extends React.Component {
 	      				Neighborhood
 
 	      				<select
-		      				name="Neighborhood"
+		      				name="Filter by Neighborhood"
 		      				onChange={this.handleNeighborhoodChange}
 		      				value={this.state.filterNeighborhood}
 		      				>
@@ -115,7 +114,7 @@ class Home extends React.Component {
 	      			<label>
 	      				Cuisine
 						<select
-		      				name="Cuisine"
+		      				name="Filter by Cuisine"
 		      				onChange={this.handleCuisineChange}
 		      				value={this.state.filterCuisine}
 		      				>
@@ -128,9 +127,16 @@ class Home extends React.Component {
 		      	</form>
 
 		      	<section id="RestaurantPreview" className="container">
-		      		{this.selectedRestaurants.map(restaurant => (
-		      			<RestaurantThumb key={restaurant.id} restaurant={restaurant} />
-		      		))}
+
+		      	{(this.selectedRestaurants.length > 0) ? (
+		      			this.selectedRestaurants.map(restaurant => (
+			      			<RestaurantThumb key={restaurant.id} restaurant={restaurant} />
+			      		))
+		      		) : (
+		      			<span>We fond no restaurants matching your settings - Sorry!</span>
+		      		)
+		      	}
+		      		
 		      	</section>
 		    </div>	
 

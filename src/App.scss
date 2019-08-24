@@ -29,10 +29,20 @@ header {
 	padding: 20px 0;
 
 	h1 {
-		color: #332;
-	}
-}
+		a, a:visited, a:hover, a:focus, a:active {
+			color: #997;
+			text-decoration: none;
+		}
 
+		a:hover, a:focus {
+			color: #aa8;
+		}
+	}
+
+	padding: 20px 0;
+    background-color: #553;
+    z-index: 3000;
+}
 
 // ******
 // rating

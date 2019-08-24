@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Header from './components/header';
 import OverviewMap from './components/map';
@@ -50,7 +49,7 @@ class RestaurantPage extends React.Component {
 		this.init();
 
 		return (
-		    <div className="App">	
+		    <div id="RestaurantPage" className="App">	
 				<Header />
 		    	<OverviewMap restaurants={[this.selectedRestaurant]} />
 
@@ -85,9 +84,9 @@ class RestaurantPage extends React.Component {
 
 		    			{ this.selectedRestaurant.reviews.map(review => (
 		    				<div className="rest-review" key={review.name}>
+		    					<Rating count={review.rating} />
 		    					<span className="icon-pseudo rest-rv-name">{review.name}</span>
 		    					<span className="icon-pseudo rest-rv-date">{review.date}</span>
-		    					<Rating count={review.rating} />
 		    					<p className="rest-rv-comment">{review.comments}</p>
 		    				</div>
 
