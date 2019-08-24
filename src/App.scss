@@ -1,0 +1,66 @@
+@import url('https://unpkg.com/leaflet@1.5.1/dist/leaflet.css');
+@import url("https://use.fontawesome.com/releases/v5.0.6/css/all.css"); /* FA CSS import */
+
+
+// *******
+// general
+// *******
+
+.container {
+	width: 90%;
+	max-width: 900px;
+	margin: 0px auto;
+}
+
+.icon-pseudo:before, .icon-pseudo:after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+// ******
+// header
+// ******
+header {
+	padding: 20px 0;
+
+	h1 {
+		color: #332;
+	}
+}
+
+
+// ******
+// rating
+// ******
+
+.rating {
+
+	span {
+		display: block;
+		margin: 10px 0;
+		float: left;
+	}
+
+	span:before {
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f005"
+	}
+	.sA:before {
+		color: #bb9603;
+	}
+	.sI:before {
+		color: #999;
+	}
+}
+

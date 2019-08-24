@@ -1,0 +1,82 @@
+// ******
+// ** map
+// ****** 
+#OverviewMap > div {
+	height: 500px;
+}
+
+
+// ****
+// form
+// ****
+
+#MapFilter {
+	margin-top: 60px;
+	margin-bottom: 60px;
+	background-color: #ddd;
+	padding: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+
+	label {
+		width: 50%;
+		float: left;
+
+		select {
+			margin-left: 1em;
+		}
+	}
+}
+
+
+
+// *******
+// preview
+// *******
+#RestaurantPreview {
+
+	margin-top: 60px;
+	margin-bottom: 60px;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 40px;
+
+	a {
+		display: block;
+		height: 100%;
+	}
+
+	.restaurant-thumb {
+
+		background-color: #ddd;
+		height: 100%;
+
+		img {
+			width: 100%;
+		}
+		
+		.restaurant-content {
+			padding: 20px;
+
+			h4 {
+				text-transform: uppercase;
+			}
+
+			span {
+				display: block;
+			}
+
+			h4, span {
+				color: #333;
+				text-decoration: none;
+			}
+
+
+		}
+	}
+
+	.restaurant-thumb:hover {
+		background-color: #ccc;
+		box-shadow: 2px 2px 10px 5px #aa9;
+	}
+}

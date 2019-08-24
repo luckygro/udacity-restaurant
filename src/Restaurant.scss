@@ -1,0 +1,86 @@
+// ******
+// ** map
+// ****** 
+#OverviewMap > div {
+	height: 500px;
+}
+
+// ******
+
+
+#RestDescription {
+
+	> div {
+		margin-top: 40px;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.rest-about {
+
+		span {
+			display: block;
+			margin: 10px 0;
+			margin-left: 20px;
+		}
+
+		.rest-ab-address:before {
+			content: "\f3c5";
+			margin-right: 0.5em;
+		}
+		.rest-ab-cuisine:before {
+			content: "\f0ac";
+			margin-right: 0.5em;
+		}
+	}
+
+	.rest-openinghours {
+		.rest-op-day {
+			margin-right: 0.5em;
+			margin-left: 20px;
+		}
+		span {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.rest-review {
+
+		> span {
+			display: block;
+			margin: 10px 0;
+			margin-left: 20px;
+			float: left;
+			color: #666;
+		}
+
+		.rest-rv-name:before {
+			content: "\f007";
+			margin-right: 0.5em;
+		}
+		.rest-rv-date:before {
+			content: "\f073";
+			margin-right: 0.5em;
+		}
+
+		> p {
+			float: left;
+			display: block;
+			width: 100%;
+			margin-left: 20px;
+			margin-top: 0px;
+		}
+
+		.rating {
+			float: right;
+
+		}
+
+	}
+
+
+}
+
